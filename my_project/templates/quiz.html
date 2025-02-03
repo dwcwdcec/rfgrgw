@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қазақ тілін білу бойынша тест</title>
+</head>
+<body>
+    <h2>Қазақ тілін білу бойынша тест</h2>
+    <form method="POST">
+        {% for i, q in enumerate(questions) %}
+            <p><b>{{ q.question }}</b></p>
+            {% for j, option in enumerate(q.options) %}
+                <input type="radio" name="q{{ i }}" value="{{ j }}"> {{ option }}<br>
+            {% endfor %}
+        {% endfor %}
+        <br>
+        <input type="submit" value="Жауап беру">
+    </form>
+</body>
+</html>
